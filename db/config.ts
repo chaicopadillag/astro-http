@@ -9,9 +9,18 @@ const clients = defineTable({
   }
 });
 
+const likes = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    likes: column.number(),
+    postId: column.text()
+  }
+});
+
 // https://astro.build/db/config
 export default defineDb({
   tables: {
-    clients
+    clients,
+    likes
   }
 });
